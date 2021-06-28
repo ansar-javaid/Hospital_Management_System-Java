@@ -17,5 +17,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="itextpdf-5.5.13.2" level="project" />
+    <orderEntry type="library" name="AbsoluteLayout" level="project" />
   </component>
 </module>

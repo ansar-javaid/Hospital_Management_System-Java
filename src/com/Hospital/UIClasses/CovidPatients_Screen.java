@@ -1,11 +1,11 @@
 package com.Hospital.UIClasses;
 
 import com.Hospital.Core_Classes.Patient;
-import com.Hospital.SearchingAndModiciation_Classes.ModifyEntities;
+import com.Hospital.LinkedList_DSA.LinkedList;
+import com.Hospital.SearchingAndModiciation.ModifyEntities;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.util.List;
 
 public class CovidPatients_Screen extends javax.swing.JFrame{
     private final ModifyEntities modificationFunctions=new ModifyEntities();
@@ -29,7 +29,7 @@ public class CovidPatients_Screen extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        addPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ServiceLable = new javax.swing.JLabel();
@@ -39,8 +39,8 @@ public class CovidPatients_Screen extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(171, 183, 183));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1609, 942));
+        addPanel.setBackground(new java.awt.Color(171, 183, 183));
+        addPanel.setPreferredSize(new java.awt.Dimension(1609, 942));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("UIComponents\\logo.png")); // NOI18N
 
@@ -86,41 +86,41 @@ public class CovidPatients_Screen extends javax.swing.JFrame{
         showPatientTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jScrollPane2.setViewportView(showPatientTable);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout addPanelLayout = new javax.swing.GroupLayout(addPanel);
+        addPanel.setLayout(addPanelLayout);
+        addPanelLayout.setHorizontalGroup(
+                addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(55, 55, 55)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addComponent(ServiceLable, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                                 .addComponent(jLabel1)
                                                                 .addGap(311, 311, 311)
                                                                 .addComponent(backToWellcomeScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
+        addPanelLayout.setVerticalGroup(
+                addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(37, 37, 37)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addComponent(backToWellcomeScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addComponent(jLabel1)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE))
-                                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                                 .addGap(0, 0, Short.MAX_VALUE)
                                                                 .addComponent(ServiceLable)))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -132,11 +132,11 @@ public class CovidPatients_Screen extends javax.swing.JFrame{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1302, Short.MAX_VALUE)
+                        .addComponent(addPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1302, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 667, Short.MAX_VALUE)
+                        .addComponent(addPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 667, Short.MAX_VALUE)
         );
 
         pack();
@@ -145,14 +145,16 @@ public class CovidPatients_Screen extends javax.swing.JFrame{
     //==================================================================================================================
     private void backToWellcomeScreenActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your Back to Wellcome here
-        Welcome_Screen welcomeScreen=new Welcome_Screen();
-        this.setVisible(false);
-        welcomeScreen.setVisible(true);
+        Welcome_Screen welcome_screen=new Welcome_Screen();
+        addPanel.setLayout(new java.awt.BorderLayout());
+        addPanel.removeAll();
+        addPanel.add(welcome_screen.MainPanel);
+        addPanel.validate();
     }
     //==================================================================================================================
     private void showCovidPatients()
     {
-        List<Patient> patientList = modificationFunctions.searchEntities.getPatientList();
+        LinkedList<Patient> patientList = modificationFunctions.searchEntities.getPatientLinkedListHold();
         model.setRowCount(0);
         for(int count = 0; count< patientList.size(); count++)
         {
@@ -165,47 +167,47 @@ public class CovidPatients_Screen extends javax.swing.JFrame{
     }
     //==================================================================================================================
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CovidPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CovidPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CovidPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CovidPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CovidPatients_Screen().setVisible(true);
-            }
-        });
-    }
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Windows".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(CovidPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(CovidPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(CovidPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(CovidPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new CovidPatients_Screen().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify
     private javax.swing.JLabel ServiceLable;
     private javax.swing.JToggleButton backToWellcomeScreen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel2;
+    public javax.swing.JPanel addPanel;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable showPatientTable;
     // End of variables declaration

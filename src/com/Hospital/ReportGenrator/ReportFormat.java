@@ -1,7 +1,7 @@
 package com.Hospital.ReportGenrator;
 
 
-import com.Hospital.SearchingAndModiciation_Classes.ModifyEntities;
+import com.Hospital.SearchingAndModiciation.ModifyEntities;
 import com.itextpdf.text.List;
 import com.itextpdf.text.Paragraph;
 
@@ -39,19 +39,19 @@ public class ReportFormat {
     //==================================================================================================================
     public List totalDoctors()
     {
-        int Emergency=0,Opd=0,Reserved=0,Total=modifyEntities.searchEntities.loadData.doctorsList.size()-1;
+        int Emergency=0,Opd=0,Reserved=0,Total=modifyEntities.searchEntities.loadData.doctorsLinkedList.size()-1;
         List ServiceList=new List();
-        for (int count=0;count<modifyEntities.searchEntities.loadData.doctorsList.size();count++)
+        for (int count=0;count<modifyEntities.searchEntities.loadData.doctorsLinkedList.size();count++)
         {
-            if(modifyEntities.searchEntities.loadData.doctorsList.get(count).getService().equals("OPD"))
+            if(modifyEntities.searchEntities.loadData.doctorsLinkedList.get(count).getService().equals("OPD"))
             {
                 Opd=Opd+1;
             }
-            else if(modifyEntities.searchEntities.loadData.doctorsList.get(count).getService().equals("Emergency"))
+            else if(modifyEntities.searchEntities.loadData.doctorsLinkedList.get(count).getService().equals("Emergency"))
             {
                 Emergency=Emergency+1;
             }
-            else  if(modifyEntities.searchEntities.loadData.doctorsList.get(count).getService().equals("Reserved"))
+            else  if(modifyEntities.searchEntities.loadData.doctorsLinkedList.get(count).getService().equals("Reserved"))
             {
                 Reserved=Reserved+1;
             }
@@ -66,25 +66,25 @@ public class ReportFormat {
     public List doctorDetails()
     {
         List details=new List();
-        for (int count=0;count<modifyEntities.searchEntities.loadData.doctorsList.size();count++)
+        for (int count=0;count<modifyEntities.searchEntities.loadData.doctorsLinkedList.size();count++)
         {
-            details.add(modifyEntities.searchEntities.loadData.doctorsList.get(count).getName()+":"+modifyEntities.searchEntities.loadData.doctorsList.get(count).getSpecialization()+",   Departmental Service-"+
-                    modifyEntities.searchEntities.loadData.doctorsList.get(count).getService()+",  Salary-"+modifyEntities.searchEntities.loadData.doctorsList.get(count).getSalary());
+            details.add(modifyEntities.searchEntities.loadData.doctorsLinkedList.get(count).getName()+":"+modifyEntities.searchEntities.loadData.doctorsLinkedList.get(count).getSpecialization()+",   Departmental Service-"+
+                    modifyEntities.searchEntities.loadData.doctorsLinkedList.get(count).getService()+",  Salary-"+modifyEntities.searchEntities.loadData.doctorsLinkedList.get(count).getSalary());
         }
         return details;
     }
     //==================================================================================================================
     public List totalPatients()
     {
-        int Emergency=0,Opd=0,Total=modifyEntities.searchEntities.loadData.patientList.size()-1;
+        int Emergency=0,Opd=0,Total=modifyEntities.searchEntities.loadData.patientLinkedList.size()-1;
         List ServiceList=new List();
-        for (int count=0;count<modifyEntities.searchEntities.loadData.patientList.size();count++)
+        for (int count=0;count<modifyEntities.searchEntities.loadData.patientLinkedList.size();count++)
         {
-            if(modifyEntities.searchEntities.loadData.patientList.get(count).getService().equals("OPD"))
+            if(modifyEntities.searchEntities.loadData.patientLinkedList.get(count).getService().equals("OPD"))
             {
                 Opd=Opd+1;
             }
-            else if(modifyEntities.searchEntities.loadData.patientList.get(count).getService().equals("Emergency"))
+            else if(modifyEntities.searchEntities.loadData.patientLinkedList.get(count).getService().equals("Emergency"))
             {
                 Emergency=Emergency+1;
             }
@@ -100,17 +100,17 @@ public class ReportFormat {
     {
         int Covid=0,Male=0,Female=0;
         List GenderList=new List();
-        for (int count=0;count<modifyEntities.searchEntities.loadData.patientList.size();count++)
+        for (int count=0;count<modifyEntities.searchEntities.loadData.patientLinkedList.size();count++)
         {
-            if(modifyEntities.searchEntities.loadData.patientList.get(count).getCovid().equals("Positive"))
+            if(modifyEntities.searchEntities.loadData.patientLinkedList.get(count).getCovid().equals("Positive"))
            {
             Covid=Covid+1;
            }
-        else if(modifyEntities.searchEntities.loadData.patientList.get(count).getGender().equals("Female"))
+        else if(modifyEntities.searchEntities.loadData.patientLinkedList.get(count).getGender().equals("Female"))
            {
             Female=Female+1;
            }
-        else if(modifyEntities.searchEntities.loadData.patientList.get(count).getGender().equals("Male"))
+        else if(modifyEntities.searchEntities.loadData.patientLinkedList.get(count).getGender().equals("Male"))
            {
             Male=Male+1;
            }

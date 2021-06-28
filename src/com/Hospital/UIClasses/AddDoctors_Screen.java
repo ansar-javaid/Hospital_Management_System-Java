@@ -1,7 +1,9 @@
 package com.Hospital.UIClasses;
 
 import com.Hospital.Core_Classes.Doctors;
-import com.Hospital.SearchingAndModiciation_Classes.ModifyEntities;
+import com.Hospital.LinkedList_DSA.LinkedList;
+import com.Hospital.Queue_DSA.Queue;
+import com.Hospital.SearchingAndModiciation.ModifyEntities;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -11,7 +13,7 @@ import java.util.List;
 
 public class AddDoctors_Screen extends javax.swing.JFrame {
     public ModifyEntities modificationFunctions=new ModifyEntities();
-    public List<Doctors> mapDoctors=new ArrayList<>();
+    public LinkedList<Doctors> mapDoctors=new LinkedList<>();
     DefaultTableModel model;
     public AddDoctors_Screen() {
         initComponents();
@@ -31,7 +33,7 @@ public class AddDoctors_Screen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        addPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -59,8 +61,8 @@ public class AddDoctors_Screen extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1380, 766));
         setPreferredSize(new java.awt.Dimension(1380,766));
 
-        jPanel2.setBackground(new java.awt.Color(171, 183, 183));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1609, 942));
+        addPanel.setBackground(new java.awt.Color(171, 183, 183));
+        addPanel.setPreferredSize(new java.awt.Dimension(1609, 942));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("UIComponents\\logo.png")); // NOI18N
 
@@ -234,45 +236,45 @@ public class AddDoctors_Screen extends javax.swing.JFrame {
         showDoctorTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jScrollPane1.setViewportView(showDoctorTable);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout addPanelLayout = new javax.swing.GroupLayout(addPanel);
+        addPanel.setLayout(addPanelLayout);
+        addPanelLayout.setHorizontalGroup(
+                addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(57, 57, 57)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(26, 26, 26)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(360, 360, 360)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addComponent(jLabel1)
                                                 .addGap(307, 307, 307)
                                                 .addComponent(backToWellcomeScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 88, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
+        addPanelLayout.setVerticalGroup(
+                addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(39, 39, 39)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel1)
                                         .addComponent(backToWellcomeScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(1, 1, 1)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel3)
                                         .addComponent(jLabel13))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
                                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addContainerGap(53, Short.MAX_VALUE))
@@ -282,11 +284,11 @@ public class AddDoctors_Screen extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(addPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1388, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
+                        .addComponent(addPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
         );
 
         pack();
@@ -310,26 +312,33 @@ public class AddDoctors_Screen extends javax.swing.JFrame {
         String specialization=(String) addDoctorSpecolizationlist.getSelectedItem();
         String salary=(String) addDoctorSalrylist.getSelectedItem();
         String id= String.valueOf(modificationFunctions.generateDoctorId());
-        modificationFunctions.searchEntities.loadData.doctorsList.add(new Doctors(id,name,cnic,address,specialization,salary,service));
+        modificationFunctions.searchEntities.loadData.doctorsLinkedList.add(new Doctors(id,name,cnic,address,specialization,salary,service));
         try { modificationFunctions.addDoctors(); } catch (IOException ignored) { }
     }
     //==================================================================================================================
     private void ShowDoctorsOnTable()
     {
-        mapDoctors=modificationFunctions.searchEntities.getDoctorList();
+        Queue<Doctors> doctorsQueue=modificationFunctions.searchEntities.getDoctorQueue();
+        Doctors doctors;
+        System.out.println(doctorsQueue.Size());
         model.setRowCount(0);
-        for(int count=0;count<mapDoctors.size();count++)
+        while(!doctorsQueue.empty())
         {
-            model.insertRow(count,new Object[]{mapDoctors.get(count).getId(),mapDoctors.get(count).getName(),mapDoctors.get(count).getService(),
-                    mapDoctors.get(count).getSpecialization(),mapDoctors.get(count).getCnic(),mapDoctors.get(count).getSalary()});
+            doctors=doctorsQueue.dequeue();
+            System.out.println(doctors.getId());
+            model.addRow(new Object[]{doctors.getId(),doctors.getName(),doctors.getService(),
+                    doctors.getSpecialization(),doctors.getCnic(),doctors.getSalary()});
         }
+        System.out.println(doctorsQueue.Size());
     }
     //==================================================================================================================
     private void backToWellcomeScreenActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add Back to Wellcome here
-        this.setVisible(false);
         Welcome_Screen welcome_screen=new Welcome_Screen();
-        welcome_screen.setVisible(true);
+        addPanel.setLayout(new java.awt.BorderLayout());
+        addPanel.removeAll();
+        addPanel.add(welcome_screen.MainPanel);
+        addPanel.validate();
     }
     //==================================================================================================================
     private void addDoctorNameMouseClicked(java.awt.event.MouseEvent evt) {
@@ -338,40 +347,40 @@ public class AddDoctors_Screen extends javax.swing.JFrame {
     }
     //==================================================================================================================
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddDoctors_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddDoctors_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddDoctors_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddDoctors_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AddDoctors_Screen().setVisible(true);
-            }
-        });
-    }
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Windows".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(AddDoctors_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(AddDoctors_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(AddDoctors_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(AddDoctors_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new AddDoctors_Screen().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify
     private javax.swing.JTextField addDoctorAddress;
@@ -392,7 +401,7 @@ public class AddDoctors_Screen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel2;
+    public javax.swing.JPanel addPanel;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable showDoctorTable;

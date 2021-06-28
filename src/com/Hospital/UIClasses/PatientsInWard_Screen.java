@@ -1,24 +1,25 @@
 package com.Hospital.UIClasses;
 
 import com.Hospital.Core_Classes.Patient;
-import com.Hospital.SearchingAndModiciation_Classes.ModifyEntities;
+import com.Hospital.SearchingAndModiciation.ModifyEntities;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Stack;
 
 public class PatientsInWard_Screen extends javax.swing.JFrame{
+    private TreeNode rootNode;
     private final ModifyEntities modificationFunctions=new ModifyEntities();
     DefaultTableModel model;
     public PatientsInWard_Screen() {
+        this.rootNode = null;
         initComponents();
         model=(DefaultTableModel) showPatientTable.getModel();
         Image icon = Toolkit.getDefaultToolkit().getImage("UIComponents\\hos.png");
         this.setIconImage(icon);
         this.setTitle("Lahore General Hospital I.M.S");
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
-
+        buildingTree();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,7 +31,7 @@ public class PatientsInWard_Screen extends javax.swing.JFrame{
     private void initComponents() {
 
         buttonGroupOPDAndEmergency = new javax.swing.ButtonGroup();
-        jPanel2 = new javax.swing.JPanel();
+        addPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ServiceLable = new javax.swing.JLabel();
@@ -43,8 +44,8 @@ public class PatientsInWard_Screen extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(171, 183, 183));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1609, 942));
+        addPanel.setBackground(new java.awt.Color(171, 183, 183));
+        addPanel.setPreferredSize(new java.awt.Dimension(1609, 942));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("UIComponents\\logo.png")); // NOI18N
 
@@ -118,46 +119,46 @@ public class PatientsInWard_Screen extends javax.swing.JFrame{
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout addPanelLayout = new javax.swing.GroupLayout(addPanel);
+        addPanel.setLayout(addPanelLayout);
+        addPanelLayout.setHorizontalGroup(
+                addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPanelLayout.createSequentialGroup()
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addGap(348, 348, 348)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                                 .addComponent(jLabel1)
                                                                 .addGap(311, 311, 311)
                                                                 .addComponent(backToWellcomeScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addGap(67, 67, 67)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(ViewOPDRadioButton)
-                                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                                 .addGap(17, 17, 17)
                                                                 .addComponent(jButton1))
                                                         .addComponent(ViewEmergencyRadioButton))
                                                 .addGap(58, 58, 58)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(ServiceLable, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addContainerGap(22, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
+        addPanelLayout.setVerticalGroup(
+                addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(37, 37, 37)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addComponent(jLabel1)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addComponent(backToWellcomeScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(ViewOPDRadioButton)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -165,7 +166,7 @@ public class PatientsInWard_Screen extends javax.swing.JFrame{
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(jButton1)
                                                 .addGap(303, 303, 303))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(ServiceLable)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -177,11 +178,11 @@ public class PatientsInWard_Screen extends javax.swing.JFrame{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1314, Short.MAX_VALUE)
+                        .addComponent(addPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1314, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
+                        .addComponent(addPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
         );
 
         pack();
@@ -190,23 +191,55 @@ public class PatientsInWard_Screen extends javax.swing.JFrame{
     //==================================================================================================================
     private void backToWellcomeScreenActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your Back to Wellcome here
-        Welcome_Screen welcomeScreen=new Welcome_Screen();
-        this.setVisible(false);
-        welcomeScreen.setVisible(true);
+        Welcome_Screen welcome_screen=new Welcome_Screen();
+        addPanel.setLayout(new java.awt.BorderLayout());
+        addPanel.removeAll();
+        addPanel.add(welcome_screen.MainPanel);
+        addPanel.validate();
     }
     //==================================================================================================================
     private void ViewOPDRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         //opd patients
-        List<Patient> patientList = modificationFunctions.searchEntities.getPatientList();
+        InOrderTraversalOpdPatients();
+    }
+    //==================================================================================================================
+    /**
+     *<h2>‣ Algorithm:</h2>
+     *<p>» Initialize an empty stack.</p>
+     *<p>» Push the current node (starting from the root node) onto the stack.
+     * Continue pushing nodes to the left of the current node until a NULL value is reached.</p>
+     *<p>» If the current node is NULL and the stack is not empty:
+     * <p>1. Remove and print the last item from the stack.</p>
+     * <p>2. Set the current node to be the node to the right of the removed node.</p>
+     * <p>3. Repeat the second step of the algorithm.</p></p>
+     * <p>» If the current node is NULL and the stack is empty, then the algorithm has finished.</p>
+     */
+    private void InOrderTraversalOpdPatients()
+    {
+        //Implementing Inorder Tree Traversal of TREE
+        Stack<TreeNode> stack=new Stack<>();
+        TreeNode targetedNode=rootNode;
         model.setRowCount(0);
         ServiceLable.setText("Out-Patient Department");
-        for(int count = 0; count< patientList.size(); count++)
+        while(!stack.empty() || targetedNode!=null)
         {
-            if(patientList.get(count).getService().equals("OPD")) {
-                model.addRow(new Object[]{patientList.get(count).getId(), patientList.get(count).getName(), patientList.get(count).getService(),
-                        patientList.get(count).getAge(), patientList.get(count).getGender(), patientList.get(count).getCovid(), patientList.get(count).getPhone(),
-                        patientList.get(count).getCnic(), patientList.get(count).getAddress(), patientList.get(count).getAdmitted(), patientList.get(count).getTime()});
+            if(targetedNode!=null)
+            {
+                stack.push(targetedNode);
+                targetedNode=targetedNode.moveToLeft();
+            }
+            else
+            {
+                targetedNode=stack.pop();
+                if(targetedNode.data.getService().equals("OPD"))
+                {
+                    model.addRow(new Object[]{targetedNode.data.getId(), targetedNode.data.getName(), targetedNode.data.getService(),
+                            targetedNode.data.getAge(), targetedNode.data.getGender(), targetedNode.data.getCovid(), targetedNode.data.getPhone(),
+                            targetedNode.data.getCnic(), targetedNode.data.getAddress(), targetedNode.data.getAdmitted(), targetedNode.data.getTime()});
+
+                }
+                targetedNode=targetedNode.moveToRight();
             }
         }
     }
@@ -221,54 +254,105 @@ public class PatientsInWard_Screen extends javax.swing.JFrame{
     private void ViewEmergencyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         //Emergency
-        List<Patient> patientList = modificationFunctions.searchEntities.getPatientList();
+        InOrderTraversalEmergencyPatients();
+    }
+    //==================================================================================================================
+    /**
+     *<h2>‣ Algorithm:</h2>
+     *<p>» Initialize an empty stack.</p>
+     *<p>» Push the current node (starting from the root node) onto the stack.
+     * Continue pushing nodes to the left of the current node until a NULL value is reached.</p>
+     *<p>» If the current node is NULL and the stack is not empty:
+     * <p>1. Remove and print the last item from the stack.</p>
+     * <p>2. Set the current node to be the node to the right of the removed node.</p>
+     * <p>3. Repeat the second step of the algorithm.</p></p>
+     * <p>» If the current node is NULL and the stack is empty, then the algorithm has finished.</p>
+     */
+    private void InOrderTraversalEmergencyPatients()
+    {
+        //Implementing Inorder Tree Traversal of TREE
+        Stack<TreeNode> stack=new Stack<>();
+        TreeNode targetedNode=rootNode;
         model.setRowCount(0);
         ServiceLable.setText("Emergency-Patient Department");
-        for(int count = 0; count< patientList.size(); count++)
+        while(!stack.empty() || targetedNode!=null)
         {
-            if(patientList.get(count).getService().equals("Emergency")) {
-                model.addRow(new Object[]{patientList.get(count).getId(), patientList.get(count).getName(), patientList.get(count).getService(),
-                        patientList.get(count).getAge(), patientList.get(count).getGender(), patientList.get(count).getCovid(), patientList.get(count).getPhone(),
-                        patientList.get(count).getCnic(), patientList.get(count).getAddress(), patientList.get(count).getAdmitted(), patientList.get(count).getTime()});
+            if(targetedNode!=null)
+            {
+                stack.push(targetedNode);
+                targetedNode=targetedNode.moveToLeft();
+            }
+            else
+            {
+                targetedNode=stack.pop();
+                if(targetedNode.data.getService().equals("Emergency"))
+                {
+                    model.addRow(new Object[]{targetedNode.data.getId(), targetedNode.data.getName(), targetedNode.data.getService(),
+                            targetedNode.data.getAge(), targetedNode.data.getGender(), targetedNode.data.getCovid(), targetedNode.data.getPhone(),
+                            targetedNode.data.getCnic(), targetedNode.data.getAddress(), targetedNode.data.getAdmitted(), targetedNode.data.getTime()});
+
+                }
+                targetedNode=targetedNode.moveToRight();
             }
         }
     }
     //==================================================================================================================
-
     /**
-     * @param args the command line arguments
+     * @param data Patient type:
+     *            <h2>‣ Algorithm:</h2>
+     *<p>» Its Very much similar to contains() method.</p>
+     *<p>» To insert a node our first task is to find the place to insert the node.</p>
+     *<p>» Take current = root .</p>
+     *<p>» start from the current and compare root.data with n.</p>
+     *<p>» if current.data is greater than n that means we need to go to the left of the root.</p>
+     *<p>» if current.data is smaller than n that means we need to go to the right of the root.</p>
+     *<p>» if any point of time current is null that means we have reached to the leaf node, insert your
+     *             node here with the help of parent node. (See code)</p>
+     * @return true if Node is added as child else false.
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+    private boolean insert(Patient data)
+    {
+        TreeNode currentNode=new TreeNode(data);
+        if(rootNode==null)
+        {
+            rootNode=currentNode;
+            return true;
+        }
+        TreeNode targetingNode=rootNode;
+        TreeNode parentNode=null;
+        while(true)
+        {
+            parentNode=targetingNode;
+            if(Integer.parseInt(data.getId())<Integer.parseInt(targetingNode.data.getId()))
+            {
+                targetingNode=targetingNode.moveToLeft();
+                if(targetingNode==null)
+                {
+                    parentNode.setLeftLink(currentNode);
+                    return true;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PatientsInWard_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PatientsInWard_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PatientsInWard_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PatientsInWard_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PatientsInWard_Screen().setVisible(true);
+            else
+            {
+                targetingNode=targetingNode.moveToRight();
+                if(targetingNode==null)
+                {
+                    parentNode.setRightLink(currentNode);
+                    return true;
+                }
             }
-        });
+        }
     }
+    //==================================================================================================================
+    private void buildingTree()
+    {
+        java.util.LinkedList<Patient> patientLinkedList=modificationFunctions.searchEntities.getPatientLinkedListUtil();
+        for(int count=0;count<patientLinkedList.size();count++)
+        {
+            insert(patientLinkedList.get(count));
+        }
+    }
+    //------------------------------------------------------------------------------------------------------------------
 
     // Variables declaration - do not modify
     private javax.swing.JLabel ServiceLable;
@@ -279,7 +363,7 @@ public class PatientsInWard_Screen extends javax.swing.JFrame{
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel2;
+    public javax.swing.JPanel addPanel;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable showPatientTable;
     // End of variables declaration

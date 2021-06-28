@@ -4,20 +4,23 @@ import com.Hospital.Core_Classes.DoctorAssociationWithPatient;
 import com.Hospital.Core_Classes.Doctors;
 import com.Hospital.Core_Classes.Patient;
 import com.Hospital.Credentials.UserCredentials;
+import com.Hospital.LinkedList_DSA.LinkedList;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 
-public class LoadDataFromDisk {
-    public List<Patient> patientList=new ArrayList<>();
-    public List<Doctors> doctorsList=new ArrayList<>();
-    public List<UserCredentials> userCredentialsList=new ArrayList<>();
-    public List<DoctorAssociationWithPatient> association=new ArrayList<>();
+
+public class LoadData {
+    public java.util.LinkedList<Patient> patientLinkedListUtil=new java.util.LinkedList<>();
+
+    public LinkedList<Patient> patientLinkedList=new LinkedList<>();
+    public LinkedList<Doctors> doctorsLinkedList=new LinkedList<>();
+    public LinkedList<UserCredentials> userCredentialsLinkedList=new LinkedList<>();
+    public LinkedList<DoctorAssociationWithPatient> doctorAssociationWithPatientLinkedList=new LinkedList<>();
     //==================================================================================================================
-    public LoadDataFromDisk()
+    public LoadData()
     {
         try { loadDoctors(); } catch (IOException e) { e.printStackTrace(); }
         try { loadPatients(); } catch (IOException e) { e.printStackTrace(); }
@@ -31,10 +34,13 @@ public class LoadDataFromDisk {
             String line = "";
             while ((line = bufferPatients.readLine()) != null) {
                 String[] separationCsvByColumn = line.split(",");
-                patientList.add(new Patient(separationCsvByColumn[0], separationCsvByColumn[1], separationCsvByColumn[2], separationCsvByColumn[3], separationCsvByColumn[4],
+                patientLinkedListUtil.add(new Patient(separationCsvByColumn[0], separationCsvByColumn[1], separationCsvByColumn[2], separationCsvByColumn[3], separationCsvByColumn[4],
+                        separationCsvByColumn[5], separationCsvByColumn[6], separationCsvByColumn[7], separationCsvByColumn[8], separationCsvByColumn[9],separationCsvByColumn[10]));
+                patientLinkedList.add(new Patient(separationCsvByColumn[0], separationCsvByColumn[1], separationCsvByColumn[2], separationCsvByColumn[3], separationCsvByColumn[4],
                         separationCsvByColumn[5], separationCsvByColumn[6], separationCsvByColumn[7], separationCsvByColumn[8], separationCsvByColumn[9],separationCsvByColumn[10]));
             }
             readPatients.close();
+        Collections.shuffle(patientLinkedListUtil);// Randomizing default Java.Util.LinkedList fro Binary Search Tree
     }
     //==================================================================================================================
     private void loadCredentials() throws IOException {
@@ -44,21 +50,21 @@ public class LoadDataFromDisk {
         while ((line=bufferCredentials.readLine())!=null)
         {
             String[] separationCsvByColumn=line.split(",");
-            userCredentialsList.add(new UserCredentials(separationCsvByColumn[0],separationCsvByColumn[1],separationCsvByColumn[2]));
+            userCredentialsLinkedList.add(new UserCredentials(separationCsvByColumn[0],separationCsvByColumn[1],separationCsvByColumn[2]));
         }
         readCredentials.close();
     }
     //==================================================================================================================
     private void loadDoctors() throws IOException
     {
-        FileReader readDoctors=new FileReader("Hospital Records\\Doctors Record.csv");
-        BufferedReader bufferDoctor=new BufferedReader(readDoctors);
-        String line="";
-        while ((line= bufferDoctor.readLine())!=null)
-        {
-            String[] separationCsvByColumn=line.split(",");
-            doctorsList.add(new Doctors(separationCsvByColumn[0],separationCsvByColumn[1],separationCsvByColumn[2],
-                    separationCsvByColumn[3],separationCsvByColumn[4],separationCsvByColumn[5],separationCsvByColumn[6]));
+            FileReader readDoctors=new FileReader("Hospital Records\\Doctors Record.csv");
+            BufferedReader bufferDoctor=new BufferedReader(readDoctors);
+            String line="";
+            while ((line= bufferDoctor.readLine())!=null)
+            {
+                String[] separationCsvByColumn=line.split(",");
+            doctorsLinkedList.add(new Doctors(separationCsvByColumn[0],separationCsvByColumn[1],separationCsvByColumn[2],
+                separationCsvByColumn[3],separationCsvByColumn[4],separationCsvByColumn[5],separationCsvByColumn[6]));
         }
         readDoctors.close();
     }
@@ -70,7 +76,7 @@ public class LoadDataFromDisk {
         while ((line= bufferAssociation.readLine())!=null)
         {
             String[] separationCsvByColumn=line.split(",");
-            association.add(new DoctorAssociationWithPatient(separationCsvByColumn[0],separationCsvByColumn[1]));
+            doctorAssociationWithPatientLinkedList.add(new DoctorAssociationWithPatient(separationCsvByColumn[0],separationCsvByColumn[1]));
         }
         readAssociation.close();
     }

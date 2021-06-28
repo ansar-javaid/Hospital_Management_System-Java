@@ -1,7 +1,7 @@
 package com.Hospital.UIClasses;
 
 import com.Hospital.Core_Classes.Doctors;
-import com.Hospital.SearchingAndModiciation_Classes.ModifyEntities;
+import com.Hospital.SearchingAndModiciation.ModifyEntities;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -34,7 +34,7 @@ public class UpdateDoctor_Screen extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        addPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -67,7 +67,7 @@ public class UpdateDoctor_Screen extends javax.swing.JFrame{
 
 
 
-        jPanel1.setBackground(new java.awt.Color(171, 183, 183));
+        addPanel.setBackground(new java.awt.Color(171, 183, 183));
 
 
         jLabel1.setIcon(new javax.swing.ImageIcon("UIComponents\\logo.png")); // NOI18N
@@ -307,36 +307,36 @@ public class UpdateDoctor_Screen extends javax.swing.JFrame{
                                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout addPanelLayout = new javax.swing.GroupLayout(addPanel);
+        addPanel.setLayout(addPanelLayout);
+        addPanelLayout.setHorizontalGroup(
+                addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(362, 362, 362)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addComponent(jLabel1)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 352, Short.MAX_VALUE)
                                                 .addComponent(backToWellcomeScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(0, 0, Short.MAX_VALUE)))
                                 .addContainerGap())
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(56, 56, 56)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(62, 62, 62)
                                                 .addComponent(EditingPanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+        addPanelLayout.setVerticalGroup(
+                addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(36, 36, 36)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel1)
                                         .addComponent(backToWellcomeScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -344,7 +344,7 @@ public class UpdateDoctor_Screen extends javax.swing.JFrame{
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(EditingPanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(277, Short.MAX_VALUE))
@@ -354,11 +354,11 @@ public class UpdateDoctor_Screen extends javax.swing.JFrame{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1357, Short.MAX_VALUE)
+                        .addComponent(addPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1357, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
+                        .addComponent(addPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
         );
 
         pack();
@@ -424,9 +424,11 @@ public class UpdateDoctor_Screen extends javax.swing.JFrame{
     //==================================================================================================================
     private void backToWellcomeScreenActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your Back to Welcome here
-        Welcome_Screen welcomeScreen=new Welcome_Screen();
-        this.setVisible(false);
-        welcomeScreen.setVisible(true);
+        Welcome_Screen welcome_screen=new Welcome_Screen();
+        addPanel.setLayout(new java.awt.BorderLayout());
+        addPanel.removeAll();
+        addPanel.add(welcome_screen.MainPanel);
+        addPanel.validate();
     }
     //==================================================================================================================
 
@@ -473,41 +475,41 @@ public class UpdateDoctor_Screen extends javax.swing.JFrame{
     }
     //==================================================================================================================
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UpdateDoctor_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UpdateDoctor_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UpdateDoctor_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UpdateDoctor_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new UpdateDoctor_Screen().setVisible(true);
-            }
-        });
-    }
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Windows".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(UpdateDoctor_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(UpdateDoctor_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(UpdateDoctor_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(UpdateDoctor_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new UpdateDoctor_Screen().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify
     private javax.swing.JTextField AddressUpdateTextField;
@@ -525,7 +527,7 @@ public class UpdateDoctor_Screen extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel addPanel;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton searchDoctorButton;

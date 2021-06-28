@@ -3,19 +3,19 @@ package com.Hospital.UIClasses;
 import com.Hospital.Core_Classes.DoctorAssociationWithPatient;
 import com.Hospital.Core_Classes.Doctors;
 import com.Hospital.Core_Classes.Patient;
-import com.Hospital.SearchingAndModiciation_Classes.ModifyEntities;
+import com.Hospital.LinkedList_DSA.LinkedList;
+import com.Hospital.SearchingAndModiciation.ModifyEntities;
+import com.Hospital.Stack_DSA.Stack;
 
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AddPatients_Screen extends javax.swing.JFrame{
     private ModifyEntities modificationFunctions=new ModifyEntities();
-    private List<Patient> patientList=new ArrayList<>();
-    private List<Doctors> doctorsList=new ArrayList<>();
+    private LinkedList<Patient> patientLinkedList=new LinkedList<>();
+    private LinkedList<Doctors> doctorLinkedList=new LinkedList<>();
     DefaultTableModel model;
     public AddPatients_Screen() {
         initComponents();
@@ -39,7 +39,7 @@ public class AddPatients_Screen extends javax.swing.JFrame{
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        addPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -55,7 +55,7 @@ public class AddPatients_Screen extends javax.swing.JFrame{
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         addPatientAddress = new javax.swing.JTextField();
-        addPatientlistGender = new javax.swing.JComboBox<>();
+        addpatientLinkedListGender = new javax.swing.JComboBox<>();
         addPatientCOVID = new javax.swing.JComboBox<>();
         addPatientService = new javax.swing.JComboBox<>();
         addPatientAdmit = new javax.swing.JComboBox<>();
@@ -85,8 +85,8 @@ public class AddPatients_Screen extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(171, 183, 183));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1609, 942));
+        addPanel.setBackground(new java.awt.Color(171, 183, 183));
+        addPanel.setPreferredSize(new java.awt.Dimension(1609, 942));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("UIComponents\\logo.png")); // NOI18N
 
@@ -140,8 +140,8 @@ public class AddPatients_Screen extends javax.swing.JFrame{
         addPatientAddress.setToolTipText("Address be like, House#.Street.City");
 
 
-        addPatientlistGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Transgender" }));
-        addPatientlistGender.setToolTipText("Choose Gender");
+        addpatientLinkedListGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Transgender" }));
+        addpatientLinkedListGender.setToolTipText("Choose Gender");
 
 
         addPatientCOVID.setForeground(new java.awt.Color(255, 51, 51));
@@ -227,7 +227,7 @@ public class AddPatients_Screen extends javax.swing.JFrame{
                                                         .addGroup(jPanel3Layout.createSequentialGroup()
                                                                 .addGap(10, 10, 10)
                                                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                        .addComponent(addPatientlistGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(addpatientLinkedListGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                         .addGroup(jPanel3Layout.createSequentialGroup()
                                                                                 .addComponent(addPatientService, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                                 .addGap(2, 2, 2)))))
@@ -276,7 +276,7 @@ public class AddPatients_Screen extends javax.swing.JFrame{
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(addPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(addPatientlistGender, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(addpatientLinkedListGender, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(addPatientCOVID, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -335,50 +335,50 @@ public class AddPatients_Screen extends javax.swing.JFrame{
         showPatientsOnTable.setToolTipText("Patient Record in L.G.S");
         jScrollPane2.setViewportView(showPatientsOnTable);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout addPanelLayout = new javax.swing.GroupLayout(addPanel);
+        addPanel.setLayout(addPanelLayout);
+        addPanelLayout.setHorizontalGroup(
+                addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPanelLayout.createSequentialGroup()
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addGap(360, 360, 360)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                                 .addComponent(jLabel1)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                 .addComponent(backToWellcomeScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addGap(57, 57, 57)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(24, 24, 24)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(69, 69, 69)))
                                 .addContainerGap(63, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
+        addPanelLayout.setVerticalGroup(
+                addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(37, 37, 37)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addPanelLayout.createSequentialGroup()
                                                 .addComponent(jLabel1)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(jLabel3)
                                                         .addComponent(jLabel13)))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addComponent(backToWellcomeScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(204, 204, 204)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                                 .addContainerGap(508, Short.MAX_VALUE))
@@ -388,11 +388,11 @@ public class AddPatients_Screen extends javax.swing.JFrame{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1367, Short.MAX_VALUE)
+                        .addComponent(addPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1367, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1163, Short.MAX_VALUE)
+                        .addComponent(addPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1163, Short.MAX_VALUE)
         );
 
         pack();
@@ -406,13 +406,13 @@ public class AddPatients_Screen extends javax.swing.JFrame{
 
         if(DoctorReserve.equals("OPD"))
         {
-            doctorsList=modificationFunctions.searchEntities.getDoctorList();
+            doctorLinkedList=modificationFunctions.searchEntities.getDoctorLinkedList();
             showDoctorsList.removeAllItems();
             showDoctorLable.setVisible(true);
             showDoctorsList.setVisible(true);
-            for(int count=0;count<doctorsList.size();count++)
+            for(int count=0;count<doctorLinkedList.size();count++)
             {
-                showDoctorsList.addItem(doctorsList.get(count).getName()+",  "+doctorsList.get(count).getSpecialization());
+                showDoctorsList.addItem(doctorLinkedList.get(count).getName()+",  "+doctorLinkedList.get(count).getSpecialization());
             }
 
 
@@ -431,21 +431,21 @@ public class AddPatients_Screen extends javax.swing.JFrame{
         String cnic=modificationFunctions.formatSetter(addPatientCnic.getText());
         String address=modificationFunctions.formatSetter(addPatientAddress.getText());
         String phone=modificationFunctions.formatSetter(addPatientPhone.getText());
-        String gender= (String) addPatientlistGender.getSelectedItem();
+        String gender= (String) addpatientLinkedListGender.getSelectedItem();
         String covid= (String) addPatientCOVID.getSelectedItem();
         String service= (String) addPatientService.getSelectedItem();
         String admit= (String) addPatientAdmit.getSelectedItem();
         String age= addPatientAge.getText();
         String time=modificationFunctions.addTimeRecord();
         String patientId= String.valueOf(modificationFunctions.generatePatientId());
-        modificationFunctions.searchEntities.loadData.patientList.add(new Patient(patientId,name,cnic,phone,address,covid,admit,service,gender,age,time));
+        modificationFunctions.searchEntities.loadData.patientLinkedList.add(new Patient(patientId,name,cnic,phone,address,covid,admit,service,gender,age,time));
         try { modificationFunctions.addPatients(); } catch (IOException ignored) { }
         String doctor=(String) showDoctorsList.getSelectedItem();
         if(doctor!=null)
         {
             String[] doctorID = doctor.split(",");
             String Id = modificationFunctions.searchEntities.searchDoctorByNameAndId(doctorID[0]).getId();
-            modificationFunctions.searchEntities.loadData.association.add(new DoctorAssociationWithPatient(patientId,Id));
+            modificationFunctions.searchEntities.loadData.doctorAssociationWithPatientLinkedList.add(new DoctorAssociationWithPatient(patientId,Id));
             try { modificationFunctions.addAssociatedPatients(); } catch (IOException ignored) { }
         }
     }
@@ -458,13 +458,16 @@ public class AddPatients_Screen extends javax.swing.JFrame{
     //==================================================================================================================
     private void ShowPatientOnTable()
     {
-        patientList=modificationFunctions.searchEntities.getPatientList();
+        Stack<Patient> patientStack=modificationFunctions.searchEntities.getPatientStack();
+        Patient patient;
         model.setRowCount(0);
-        for(int count=0;count<patientList.size();count++)
+        while(!patientStack.empty())
         {
-            model.insertRow(count,new Object[]{patientList.get(count).getId(),patientList.get(count).getName(),patientList.get(count).getPhone(),
-                    patientList.get(count).getCnic(),patientList.get(count).getService(),patientList.get(count).getAge(),patientList.get(count).getGender(),
-                    patientList.get(count).getCovid(),patientList.get(count).getAddress()});
+            patient=patientStack.pop();
+            System.out.println(patient.getId());
+            model.addRow(new Object[]{patient.getId(),patient.getName(),patient.getPhone(),
+                    patient.getCnic(),patient.getService(),patient.getAge(),patient.getGender(),
+                    patient.getCovid(),patient.getAddress()});
         }
     }
     //==================================================================================================================
@@ -477,9 +480,11 @@ public class AddPatients_Screen extends javax.swing.JFrame{
     //==================================================================================================================
     private void backToWellcomeScreenActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your Back to Wellcome here
-        this.setVisible(false);
-        Welcome_Screen welcomeScreen=new Welcome_Screen();
-        welcomeScreen.setVisible(true);
+        Welcome_Screen welcome_screen=new Welcome_Screen();
+        addPanel.setLayout(new java.awt.BorderLayout());
+        addPanel.removeAll();
+        addPanel.add(welcome_screen.MainPanel);
+        addPanel.validate();
     }
     //==================================================================================================================
     private void addPatientNameMouseClicked(java.awt.event.MouseEvent evt) {
@@ -488,41 +493,41 @@ public class AddPatients_Screen extends javax.swing.JFrame{
     }
     //==================================================================================================================
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AddPatients_Screen().setVisible(true);
-            }
-        });
-    }
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Windows".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(AddPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(AddPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(AddPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(AddPatients_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new AddPatients_Screen().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify
     private javax.swing.JTextField addPatientAddress;
@@ -534,7 +539,7 @@ public class AddPatients_Screen extends javax.swing.JFrame{
     private javax.swing.JTextField addPatientName;
     private javax.swing.JFormattedTextField addPatientPhone;
     private javax.swing.JComboBox<String> addPatientService;
-    private javax.swing.JComboBox<String> addPatientlistGender;
+    private javax.swing.JComboBox<String> addpatientLinkedListGender;
     private javax.swing.JToggleButton backToWellcomeScreen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -550,7 +555,7 @@ public class AddPatients_Screen extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    public javax.swing.JPanel addPanel;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel showDoctorLable;

@@ -1,23 +1,25 @@
 package com.Hospital.UIClasses;
 
-import com.Hospital.Core_Classes.Doctors;
 import com.Hospital.Core_Classes.Patient;
-import com.Hospital.SearchingAndModiciation_Classes.ModifyEntities;
+import com.Hospital.SearchingAndModiciation.ModifyEntities;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class SearchPatient_Screen extends javax.swing.JFrame {
+    private TreeNode rootNode;
     private final ModifyEntities modificationFunctions=new ModifyEntities();
     private Patient mapPatients;
     DefaultTableModel model;
     public SearchPatient_Screen() {
+        this.rootNode = null;
         initComponents();
         model=(DefaultTableModel) showPatientTable.getModel();
         Image icon = Toolkit.getDefaultToolkit().getImage("UIComponents\\hos.png");
         this.setIconImage(icon);
         this.setTitle("Lahore General Hospital I.M.S");
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        buildingTree();
     }
 
     /**
@@ -29,7 +31,7 @@ public class SearchPatient_Screen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        addPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -45,7 +47,7 @@ public class SearchPatient_Screen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
 
-        jPanel1.setBackground(new java.awt.Color(171, 183, 183));
+        addPanel.setBackground(new java.awt.Color(171, 183, 183));
         jLabel1.setIcon(new javax.swing.ImageIcon("UIComponents\\logo.png")); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -147,33 +149,33 @@ public class SearchPatient_Screen extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout addPanelLayout = new javax.swing.GroupLayout(addPanel);
+        addPanel.setLayout(addPanelLayout);
+        addPanelLayout.setHorizontalGroup(
+                addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(362, 362, 362)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addComponent(jLabel1)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 383, Short.MAX_VALUE)
                                                 .addComponent(backToWellcomeScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(addPanelLayout.createSequentialGroup()
                                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(0, 0, Short.MAX_VALUE)))
                                 .addContainerGap())
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(56, 56, 56)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+        addPanelLayout.setVerticalGroup(
+                addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addPanelLayout.createSequentialGroup()
                                 .addGap(36, 36, 36)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel1)
                                         .addComponent(backToWellcomeScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -189,12 +191,12 @@ public class SearchPatient_Screen extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1388, Short.MAX_VALUE)
+                        .addComponent(addPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1388, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(addPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -205,75 +207,145 @@ public class SearchPatient_Screen extends javax.swing.JFrame {
     private void searchPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO Search Patient
         String NameORIdOrPhone=searchPatient.getText();
-        mapPatients=modificationFunctions.searchEntities.searchPatientByIdAndPhone(NameORIdOrPhone);
-        if( mapPatients!=null)
-        {
+        try {
+            int ID = Integer.parseInt(NameORIdOrPhone.replaceAll(" ",""));
+            Patient patient=contains(ID);
+            if (patient != null) {
 
-            showPatientNameLable.setText(mapPatients.getName() + " ( Patient)");
-            model.setRowCount(0);
-            model.insertRow(0, new Object[]{mapPatients.getId(), mapPatients.getName(),mapPatients.getService(),
-            mapPatients.getAge(),mapPatients.getGender(),mapPatients.getCovid(),mapPatients.getPhone(),mapPatients.getCnic(),
-            mapPatients.getAddress(),mapPatients.getAdmitted(),mapPatients.getTime()});
+                showPatientNameLable.setText(patient.getName() + " ( Patient )");
+                model.setRowCount(0);
+                model.insertRow(0, new Object[]{patient.getId(), patient.getName(), patient.getService(),
+                        patient.getAge(), patient.getGender(), patient.getCovid(), patient.getPhone(), patient.getCnic(),
+                        patient.getAddress(), patient.getAdmitted(), patient.getTime()});
 
+            } else {
+
+                showPatientNameLable.setText("Patient Not Found!");
+                model.setRowCount(0);
+            }
         }
-        else
-        {
+        catch(Exception e) {
+            mapPatients = modificationFunctions.searchEntities.searchPatientByIdAndPhone(NameORIdOrPhone);
+            if (mapPatients != null) {
 
-            showPatientNameLable.setText("Patient Not Found!");
-            model.setRowCount(0);
+                showPatientNameLable.setText(mapPatients.getName() + " ( Patient)");
+                model.setRowCount(0);
+                model.insertRow(0, new Object[]{mapPatients.getId(), mapPatients.getName(), mapPatients.getService(),
+                        mapPatients.getAge(), mapPatients.getGender(), mapPatients.getCovid(), mapPatients.getPhone(), mapPatients.getCnic(),
+                        mapPatients.getAddress(), mapPatients.getAdmitted(), mapPatients.getTime()});
+
+            } else {
+
+                showPatientNameLable.setText("Patient Not Found!");
+                model.setRowCount(0);
+            }
         }
     }
     //==================================================================================================================
     private void backToWellcomeScreenActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your  Back to Wellcome here
-        Welcome_Screen welcomeScreen=new Welcome_Screen();
-        this.setVisible(false);
-        welcomeScreen.setVisible(true);
+        Welcome_Screen welcome_screen=new Welcome_Screen();
+        addPanel.setLayout(new java.awt.BorderLayout());
+        addPanel.removeAll();
+        addPanel.add(welcome_screen.MainPanel);
+        addPanel.validate();
     }
     //==================================================================================================================
-
     /**
-     * @param args the command line arguments
+     * @param data Patient type:
+     *            <h2>‣ Algorithm:</h2>
+     *<p>» Its Very much similar to contains() method.</p>
+     *<p>» To insert a node our first task is to find the place to insert the node.</p>
+     *<p>» Take current = root .</p>
+     *<p>» start from the current and compare root.data with n.</p>
+     *<p>» if current.data is greater than n that means we need to go to the left of the root.</p>
+     *<p>» if current.data is smaller than n that means we need to go to the right of the root.</p>
+     *<p>» if any point of time current is null that means we have reached to the leaf node, insert your
+     *             node here with the help of parent node. (See code)</p>
+     * @return true if Node is added as child else false.
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+    private boolean insert(Patient data)
+    {
+        TreeNode currentNode=new TreeNode(data);
+        if(rootNode==null)
+        {
+            rootNode=currentNode;
+            return true;
+        }
+        TreeNode targetingNode=rootNode;
+        TreeNode parentNode=null;
+        while(true)
+        {
+            parentNode=targetingNode;
+            if(Integer.parseInt(data.getId())<Integer.parseInt(targetingNode.data.getId()))
+            {
+                targetingNode=targetingNode.moveToLeft();
+                if(targetingNode==null)
+                {
+                    parentNode.setLeftLink(currentNode);
+                    return true;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SearchPatient_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SearchPatient_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SearchPatient_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SearchPatient_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SearchPatient_Screen().setVisible(true);
+            else
+            {
+                targetingNode=targetingNode.moveToRight();
+                if(targetingNode==null)
+                {
+                    parentNode.setRightLink(currentNode);
+                    return true;
+                }
             }
-        });
+        }
     }
-
+    //==================================================================================================================
+    /**
+     * @param data integer type:
+     *             <h2>‣ Algorithm:</h2>
+     * <p>» Its very simple operation to perform.</p>
+     * <p>» start from the root and compare root.data with data</p>
+     * <p>» if root.data is greater than data that means we need to go to the left of the root.</p>
+     * <p>» if root.data is smaller than data that means we need to go to the right of the root.</p>
+     * <p>» if any point of time root.data is equal to the data then we have found the node, return true.</p>
+     * <p>» if we reach to the leaves (end of the tree) return false, we didn’t find the element</p>
+     * @return true if it contains data else false
+     */
+    public Patient contains(int data)
+    {
+        TreeNode targetedNode=rootNode;
+        while(targetedNode!=null)
+        {
+            if(data==Integer.parseInt(targetedNode.data.getId()))
+            {
+                return targetedNode.data;
+            }
+            else if(data<Integer.parseInt(targetedNode.data.getId()))
+            {
+                targetedNode=targetedNode.moveToLeft();
+            }
+            else
+            {
+                targetedNode=targetedNode.moveToRight();
+            }
+        }
+        return null;
+    }
+    //==================================================================================================================
+    private void buildingTree()
+    {
+        java.util.LinkedList<Patient> patientLinkedList=modificationFunctions.searchEntities.getPatientLinkedListUtil();
+        for(int count=0;count<patientLinkedList.size();count++)
+        {
+            insert(patientLinkedList.get(count));
+        }
+    }
+    //==================================================================================================================
     // Variables declaration - do not modify
     private javax.swing.JToggleButton backToWellcomeScreen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel addPanel;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField searchPatient;

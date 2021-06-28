@@ -25,7 +25,7 @@ public class Welcome_Screen extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        MainPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -44,7 +44,7 @@ public class Welcome_Screen extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(171, 183, 183));
+        MainPanel.setBackground(new java.awt.Color(171, 183, 183));
 
 
         jLabel1.setIcon(new javax.swing.ImageIcon("UIComponents\\logo.png")); // NOI18N
@@ -163,79 +163,79 @@ public class Welcome_Screen extends javax.swing.JFrame{
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
+        MainPanel.setLayout(MainPanelLayout);
+        MainPanelLayout.setHorizontalGroup(
+                MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(MainPanelLayout.createSequentialGroup()
+                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(MainPanelLayout.createSequentialGroup()
                                                 .addGap(57, 57, 57)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addGroup(MainPanelLayout.createSequentialGroup()
+                                                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                                         .addComponent(patientWardDetailButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                         .addComponent(searchPatientDetailsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                         .addComponent(searchCOVIDpatients, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                         .addComponent(genratePatientsReport, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addGap(368, 368, 368)
-                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                                 .addComponent(searchDoctorButton, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                                                         .addComponent(genrateDoctorsReport, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
                                                                                         .addComponent(searhDoctorPatientAssociation, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                                                         .addComponent(updateDoctorRecordButton, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(MainPanelLayout.createSequentialGroup()
+                                                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                         .addComponent(addPatientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                 .addComponent(addDoctorButton, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(MainPanelLayout.createSequentialGroup()
                                                 .addGap(702, 702, 702)
                                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(MainPanelLayout.createSequentialGroup()
                                                 .addGap(361, 361, 361)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addGroup(MainPanelLayout.createSequentialGroup()
                                                                 .addComponent(jLabel1)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 271, Short.MAX_VALUE)
                                                                 .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addGap(64, 64, 64))
         );
-        jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+        MainPanelLayout.setVerticalGroup(
+                MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(MainPanelLayout.createSequentialGroup()
                                 .addGap(37, 37, 37)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel1)
                                         .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(46, 46, 46)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel3)
                                         .addComponent(jLabel4))
                                 .addGap(31, 31, 31)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(addPatientButton)
                                         .addComponent(addDoctorButton))
                                 .addGap(43, 43, 43)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(searchPatientDetailsButton)
                                         .addComponent(searhDoctorPatientAssociation))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(patientWardDetailButton)
                                         .addComponent(searchDoctorButton))
                                 .addGap(13, 13, 13)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(searchCOVIDpatients)
                                         .addComponent(updateDoctorRecordButton))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(genrateDoctorsReport)
                                         .addComponent(genratePatientsReport))
                                 .addContainerGap(71, Short.MAX_VALUE))
@@ -245,11 +245,11 @@ public class Welcome_Screen extends javax.swing.JFrame{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -260,8 +260,11 @@ public class Welcome_Screen extends javax.swing.JFrame{
         // TODO add your handling code here:
         // Search Patient by Name here
         PatientsInWard_Screen patientsInWardScreen=new PatientsInWard_Screen();
-        this.setVisible(false);
-        patientsInWardScreen.setVisible(true);
+        MainPanel.setLayout(new java.awt.BorderLayout());
+        MainPanel.removeAll();
+        MainPanel.add(patientsInWardScreen.addPanel);
+        MainPanel.validate();
+
     }
     //==================================================================================================================
     private void generatePatientsReportActionPerformed(java.awt.event.ActionEvent evt) {
@@ -278,55 +281,74 @@ public class Welcome_Screen extends javax.swing.JFrame{
         // TODO add your handling code here:
         //Add Patients Button here
         AddPatients_Screen patients_screen=new AddPatients_Screen();
-        this.setVisible(false);
-        patients_screen.setVisible(true);
+        MainPanel.setLayout(new java.awt.BorderLayout());
+        MainPanel.removeAll();
+        MainPanel.add(patients_screen.addPanel);
+        MainPanel.validate();
     }
     //==================================================================================================================
     private void searchCOVIDpatientsActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         // Search COVID Positive patients here
         CovidPatients_Screen covidPatientsScreen=new CovidPatients_Screen();
-        this.setVisible(false);
-        covidPatientsScreen.setVisible(true);
+        MainPanel.setLayout(new java.awt.BorderLayout());
+        MainPanel.removeAll();
+        MainPanel.add(covidPatientsScreen.addPanel);
+        MainPanel.validate();
+
     }
     //==================================================================================================================
     private void searchPatientDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         // Search Patients BY Phone or ID here
         SearchPatient_Screen searchPatientScreen=new SearchPatient_Screen();
-        this.setVisible(false);
-        searchPatientScreen.setVisible(true);
+        MainPanel.setLayout(new java.awt.BorderLayout());
+        MainPanel.removeAll();
+        MainPanel.add(searchPatientScreen.addPanel);
+        MainPanel.validate();
     }
     //==================================================================================================================
     private void addDoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         // Add Doctors Button here
         AddDoctors_Screen addDoctors_screen=new AddDoctors_Screen();
-        this.setVisible(false);
-        addDoctors_screen.setVisible(true);
+        MainPanel.setLayout(new java.awt.BorderLayout());
+        MainPanel.removeAll();
+        MainPanel.add(addDoctors_screen.addPanel);
+        MainPanel.validate();
     }
     //==================================================================================================================
     private void updateDoctorRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your  Doctors Record
         UpdateDoctor_Screen updateDoctorScreen=new UpdateDoctor_Screen();
-        this.setVisible(false);
-        updateDoctorScreen.setVisible(true);
+        MainPanel.setLayout(new java.awt.BorderLayout());
+        MainPanel.removeAll();
+        MainPanel.add(updateDoctorScreen.addPanel);
+        MainPanel.validate();
+
+
     }
     //==================================================================================================================
     private void searchDoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         //Search Doctor By Name or ID
         SearchDoctor_Screen searchDoctorScreen=new SearchDoctor_Screen();
-        this.setVisible(false);
-        searchDoctorScreen.setVisible(true);
+        MainPanel.setLayout(new java.awt.BorderLayout());
+        MainPanel.removeAll();
+        MainPanel.add(searchDoctorScreen.addPanel);
+        MainPanel.validate();
+
     }
     //==================================================================================================================
     private void searhDoctorPatientAssociationActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         //Doctor Patient Asscoition here
-        this.setVisible(false);
         DoctorPatientAssociation_Screen doctorPatientAssociationScreen =new DoctorPatientAssociation_Screen();
-        doctorPatientAssociationScreen.setVisible(true);
+        MainPanel.setLayout(new java.awt.BorderLayout());
+        MainPanel.removeAll();
+        MainPanel.add(doctorPatientAssociationScreen.addPanel);
+        MainPanel.validate();
+
     }
     //==================================================================================================================
     private void generateDoctorsReportActionPerformed(java.awt.event.ActionEvent evt) {
@@ -344,8 +366,9 @@ public class Welcome_Screen extends javax.swing.JFrame{
         // TODO add your handling code here:
         // TODO logout
         this.setVisible(false);
-        Login_Screen loginScreen =new Login_Screen();
+        LoginScreen loginScreen =new LoginScreen();
         loginScreen.setVisible(true);
+
     }
     //==================================================================================================================
     private void DoctorReport() throws IOException {
@@ -405,7 +428,7 @@ public class Welcome_Screen extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    protected javax.swing.JPanel MainPanel;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton patientWardDetailButton;
     private javax.swing.JButton searchCOVIDpatients;

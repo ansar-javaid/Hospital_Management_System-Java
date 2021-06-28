@@ -1,4 +1,4 @@
-package com.Hospital.SearchingAndModiciation_Classes;
+package com.Hospital.SearchingAndModiciation;
 
 
 
@@ -25,16 +25,16 @@ public class ModifyEntities {
      * @throws IOException
      */
     public boolean resetPassword(String userEmail, String userPhone, String newPassword) throws IOException {
-        for (int count = 0; count <searchEntities.loadData.userCredentialsList.size(); count++)
+        for (int count = 0; count <searchEntities.loadData.userCredentialsLinkedList.size(); count++)
         {
-            if (userEmail.hashCode() ==searchEntities.loadData.userCredentialsList.get(count).getEmail().hashCode()
-                    && userPhone.hashCode() ==searchEntities.loadData.userCredentialsList.get(count).getPhone().hashCode())
+            if (userEmail.hashCode() ==searchEntities.loadData.userCredentialsLinkedList.get(count).getEmail().hashCode()
+                    && userPhone.hashCode() ==searchEntities.loadData.userCredentialsLinkedList.get(count).getPhone().hashCode())
             {
-                searchEntities.loadData.userCredentialsList.get(count).setPassword(newPassword);
+                searchEntities.loadData.userCredentialsLinkedList.get(count).setPassword(newPassword);
                 FileWriter writeNewCredentials=new FileWriter("user\\UserLogins.csv");
-                for(int count1=0;count1<searchEntities.loadData.userCredentialsList.size();count1++)
+                for(int count1=0;count1<searchEntities.loadData.userCredentialsLinkedList.size();count1++)
                 {
-                    writeNewCredentials.write(searchEntities.loadData.userCredentialsList.get(count1).getEmail()+","+searchEntities.loadData.userCredentialsList.get(count1).getPassword()+","+searchEntities.loadData.userCredentialsList.get(count1).getPhone()+"\n");
+                    writeNewCredentials.write(searchEntities.loadData.userCredentialsLinkedList.get(count1).getEmail()+","+searchEntities.loadData.userCredentialsLinkedList.get(count1).getPassword()+","+searchEntities.loadData.userCredentialsLinkedList.get(count1).getPhone()+"\n");
                 }
                 writeNewCredentials.close();
                 return true;
@@ -50,7 +50,7 @@ public class ModifyEntities {
      */
     public int generatePatientId()
     {
-        int patientId=Integer.parseInt(searchEntities.loadData.patientList.get(searchEntities.loadData.patientList.size()-1).getId());
+        int patientId=Integer.parseInt(searchEntities.loadData.patientLinkedList.get(searchEntities.loadData.patientLinkedList.size()-1).getId());
         return patientId+1;
     }
     //==================================================================================================================
@@ -61,7 +61,7 @@ public class ModifyEntities {
      */
     public int generateDoctorId()
     {
-        int patientId=Integer.parseInt(searchEntities.loadData.doctorsList.get(searchEntities.loadData.doctorsList.size()-1).getId());
+        int patientId=Integer.parseInt(searchEntities.loadData.doctorsLinkedList.get(searchEntities.loadData.doctorsLinkedList.size()-1).getId());
         return patientId+1;
     }
     //==================================================================================================================
@@ -73,14 +73,14 @@ public class ModifyEntities {
      */
     public void addPatients() throws IOException {
         FileWriter writeNewPatients=new FileWriter("Hospital Records\\Patient Record.csv");
-        for (int count = 0; count < searchEntities.loadData.patientList.size(); count++)
+        for (int count = 0; count < searchEntities.loadData.patientLinkedList.size(); count++)
         {
-            writeNewPatients.write(searchEntities.loadData.patientList.get(count).getId()+","+
-                    searchEntities.loadData.patientList.get(count).getName()+","+searchEntities.loadData.patientList.get(count).getCnic()+","+
-                    searchEntities.loadData.patientList.get(count).getPhone()+","+searchEntities.loadData.patientList.get(count).getAddress()+","+
-                    searchEntities.loadData.patientList.get(count).getCovid()+","+
-                    searchEntities.loadData.patientList.get(count).getAdmitted()+","+searchEntities.loadData.patientList.get(count).getService()+","+
-                    searchEntities.loadData.patientList.get(count).getGender()+","+searchEntities.loadData.patientList.get(count).getAge()+","+searchEntities.loadData.patientList.get(count).getTime()+"\n");
+            writeNewPatients.write(searchEntities.loadData.patientLinkedList.get(count).getId()+","+
+                    searchEntities.loadData.patientLinkedList.get(count).getName()+","+searchEntities.loadData.patientLinkedList.get(count).getCnic()+","+
+                    searchEntities.loadData.patientLinkedList.get(count).getPhone()+","+searchEntities.loadData.patientLinkedList.get(count).getAddress()+","+
+                    searchEntities.loadData.patientLinkedList.get(count).getCovid()+","+
+                    searchEntities.loadData.patientLinkedList.get(count).getAdmitted()+","+searchEntities.loadData.patientLinkedList.get(count).getService()+","+
+                    searchEntities.loadData.patientLinkedList.get(count).getGender()+","+searchEntities.loadData.patientLinkedList.get(count).getAge()+","+searchEntities.loadData.patientLinkedList.get(count).getTime()+"\n");
         }
         writeNewPatients.close();
     }
@@ -93,15 +93,15 @@ public class ModifyEntities {
      */
     public void addOPDPatients() throws IOException {
         FileWriter writeOPDPatients=new FileWriter("Hospital Records\\OPD.csv");
-        for (int count = 0; count < searchEntities.loadData.patientList.size(); count++)
+        for (int count = 0; count < searchEntities.loadData.patientLinkedList.size(); count++)
         {
-            if(searchEntities.loadData.patientList.get(count).getService().equals("OPD")) {
-                writeOPDPatients.write(searchEntities.loadData.patientList.get(count).getId() + "," +
-                        searchEntities.loadData.patientList.get(count).getName() + "," + searchEntities.loadData.patientList.get(count).getCnic() + "," +
-                        searchEntities.loadData.patientList.get(count).getPhone() + "," + searchEntities.loadData.patientList.get(count).getAddress() + "," +
-                        searchEntities.loadData.patientList.get(count).getCovid() + "," +
-                        searchEntities.loadData.patientList.get(count).getAdmitted() + "," + searchEntities.loadData.patientList.get(count).getService() + "," +
-                        searchEntities.loadData.patientList.get(count).getGender() + "," + searchEntities.loadData.patientList.get(count).getAge() + "\n");
+            if(searchEntities.loadData.patientLinkedList.get(count).getService().equals("OPD")) {
+                writeOPDPatients.write(searchEntities.loadData.patientLinkedList.get(count).getId() + "," +
+                        searchEntities.loadData.patientLinkedList.get(count).getName() + "," + searchEntities.loadData.patientLinkedList.get(count).getCnic() + "," +
+                        searchEntities.loadData.patientLinkedList.get(count).getPhone() + "," + searchEntities.loadData.patientLinkedList.get(count).getAddress() + "," +
+                        searchEntities.loadData.patientLinkedList.get(count).getCovid() + "," +
+                        searchEntities.loadData.patientLinkedList.get(count).getAdmitted() + "," + searchEntities.loadData.patientLinkedList.get(count).getService() + "," +
+                        searchEntities.loadData.patientLinkedList.get(count).getGender() + "," + searchEntities.loadData.patientLinkedList.get(count).getAge() + "\n");
             }
         }
         writeOPDPatients.close();
@@ -115,15 +115,15 @@ public class ModifyEntities {
      */
     public void addEmergencyPatients() throws IOException {
         FileWriter writeEmrgencyPatients=new FileWriter("Hospital Records\\Emergency.csv");
-        for(int count=0;count<searchEntities.loadData.patientList.size();count++)
+        for(int count=0;count<searchEntities.loadData.patientLinkedList.size();count++)
         {
-           if(searchEntities.loadData.patientList.get(count).getService().equals("Emergency")) {
-            writeEmrgencyPatients.write(searchEntities.loadData.patientList.get(count).getId() + "," +
-                    searchEntities.loadData.patientList.get(count).getName() + "," + searchEntities.loadData.patientList.get(count).getCnic() + "," +
-                    searchEntities.loadData.patientList.get(count).getPhone() + "," + searchEntities.loadData.patientList.get(count).getAddress() + "," +
-                    searchEntities.loadData.patientList.get(count).getCovid() + "," +
-                    searchEntities.loadData.patientList.get(count).getAdmitted() + "," + searchEntities.loadData.patientList.get(count).getService() + "," +
-                    searchEntities.loadData.patientList.get(count).getGender() + "," + searchEntities.loadData.patientList.get(count).getAge() + "\n"); }
+           if(searchEntities.loadData.patientLinkedList.get(count).getService().equals("Emergency")) {
+            writeEmrgencyPatients.write(searchEntities.loadData.patientLinkedList.get(count).getId() + "," +
+                    searchEntities.loadData.patientLinkedList.get(count).getName() + "," + searchEntities.loadData.patientLinkedList.get(count).getCnic() + "," +
+                    searchEntities.loadData.patientLinkedList.get(count).getPhone() + "," + searchEntities.loadData.patientLinkedList.get(count).getAddress() + "," +
+                    searchEntities.loadData.patientLinkedList.get(count).getCovid() + "," +
+                    searchEntities.loadData.patientLinkedList.get(count).getAdmitted() + "," + searchEntities.loadData.patientLinkedList.get(count).getService() + "," +
+                    searchEntities.loadData.patientLinkedList.get(count).getGender() + "," + searchEntities.loadData.patientLinkedList.get(count).getAge() + "\n"); }
         }
         writeEmrgencyPatients.close();
     }
@@ -135,10 +135,10 @@ public class ModifyEntities {
      */
     public void addAssociatedPatients() throws IOException {
         FileWriter writeAssociatedPatients=new FileWriter("Hospital Records\\Doctor association with patients.csv");
-        for(int count=0;count<searchEntities.loadData.association.size();count++)
+        for(int count=0;count<searchEntities.loadData.doctorAssociationWithPatientLinkedList.size();count++)
         {
-            writeAssociatedPatients.write(searchEntities.loadData.association.get(count).getPatientID()+
-            ","+searchEntities.loadData.association.get(count).getDoctorID()+"\n");
+            writeAssociatedPatients.write(searchEntities.loadData.doctorAssociationWithPatientLinkedList.get(count).getPatientID()+
+            ","+searchEntities.loadData.doctorAssociationWithPatientLinkedList.get(count).getDoctorID()+"\n");
         }
         writeAssociatedPatients.close();
     }
@@ -162,13 +162,13 @@ public class ModifyEntities {
      */
     public void addDoctors() throws IOException {
         FileWriter writeNewDoctors=new FileWriter("Hospital Records\\Doctors Record.csv");
-        for (int count = 0; count < searchEntities.loadData.doctorsList.size(); count++)
+        for (int count = 0; count < searchEntities.loadData.doctorsLinkedList.size(); count++)
         {
-            writeNewDoctors.write(searchEntities.loadData.doctorsList.get(count).getId()+","+
-                    searchEntities.loadData.doctorsList.get(count).getName()+","+searchEntities.loadData.doctorsList.get(count).getCnic()+","+
-                    searchEntities.loadData.doctorsList.get(count).getAddress()+","+
-                    searchEntities.loadData.doctorsList.get(count).getSpecialization()+","+searchEntities.loadData.doctorsList.get(count).getSalary()+","+
-                    searchEntities.loadData.doctorsList.get(count).getService()+"\n");
+            writeNewDoctors.write(searchEntities.loadData.doctorsLinkedList.get(count).getId()+","+
+                    searchEntities.loadData.doctorsLinkedList.get(count).getName()+","+searchEntities.loadData.doctorsLinkedList.get(count).getCnic()+","+
+                    searchEntities.loadData.doctorsLinkedList.get(count).getAddress()+","+
+                    searchEntities.loadData.doctorsLinkedList.get(count).getSpecialization()+","+searchEntities.loadData.doctorsLinkedList.get(count).getSalary()+","+
+                    searchEntities.loadData.doctorsLinkedList.get(count).getService()+"\n");
         }
         writeNewDoctors.close();
     }
@@ -200,18 +200,18 @@ public class ModifyEntities {
      */
     public boolean updateDoctor(String Id, String Name, String Address, String Cnic, String Specialization, String Service, String Salary)
     {
-        for(int count=0;count<searchEntities.loadData.doctorsList.size();count++)
+        for(int count=0;count<searchEntities.loadData.doctorsLinkedList.size();count++)
         {
-            if(Id.equals(searchEntities.loadData.doctorsList.get(count).getId()))
+            if(Id.equals(searchEntities.loadData.doctorsLinkedList.get(count).getId()))
             {
                 if(Name.length()>=5 && Cnic.length()>=15 && Address.length()>=10 && Specialization!=null && Salary!=null && Service!=null)
                 {
-                    searchEntities.loadData.doctorsList.get(count).setService(Service);
-                    searchEntities.loadData.doctorsList.get(count).setName(Name);
-                    searchEntities.loadData.doctorsList.get(count).setAddress(Address);
-                    searchEntities.loadData.doctorsList.get(count).setCnic(Cnic);
-                    searchEntities.loadData.doctorsList.get(count).setSpecialization(Specialization);
-                    searchEntities.loadData.doctorsList.get(count).setSalary(Salary);
+                    searchEntities.loadData.doctorsLinkedList.get(count).setService(Service);
+                    searchEntities.loadData.doctorsLinkedList.get(count).setName(Name);
+                    searchEntities.loadData.doctorsLinkedList.get(count).setAddress(Address);
+                    searchEntities.loadData.doctorsLinkedList.get(count).setCnic(Cnic);
+                    searchEntities.loadData.doctorsLinkedList.get(count).setSpecialization(Specialization);
+                    searchEntities.loadData.doctorsLinkedList.get(count).setSalary(Salary);
 
                     return true;
                 }
