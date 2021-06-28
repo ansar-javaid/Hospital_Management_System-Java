@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: itextpdf-5.5.13.2.jar
+
