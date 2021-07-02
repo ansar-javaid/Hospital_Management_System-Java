@@ -232,11 +232,11 @@ public class PatientsInWard_Screen extends javax.swing.JFrame{
             else
             {
                 targetedNode=stack.pop();
-                if(targetedNode.data.getService().equals("OPD"))
+                if(targetedNode.patientData.getService().equals("OPD"))
                 {
-                    model.addRow(new Object[]{targetedNode.data.getId(), targetedNode.data.getName(), targetedNode.data.getService(),
-                            targetedNode.data.getAge(), targetedNode.data.getGender(), targetedNode.data.getCovid(), targetedNode.data.getPhone(),
-                            targetedNode.data.getCnic(), targetedNode.data.getAddress(), targetedNode.data.getAdmitted(), targetedNode.data.getTime()});
+                    model.addRow(new Object[]{targetedNode.patientData.getId(), targetedNode.patientData.getName(), targetedNode.patientData.getService(),
+                            targetedNode.patientData.getAge(), targetedNode.patientData.getGender(), targetedNode.patientData.getCovid(), targetedNode.patientData.getPhone(),
+                            targetedNode.patientData.getCnic(), targetedNode.patientData.getAddress(), targetedNode.patientData.getAdmitted(), targetedNode.patientData.getTime()});
 
                 }
                 targetedNode=targetedNode.moveToRight();
@@ -285,11 +285,11 @@ public class PatientsInWard_Screen extends javax.swing.JFrame{
             else
             {
                 targetedNode=stack.pop();
-                if(targetedNode.data.getService().equals("Emergency"))
+                if(targetedNode.patientData.getService().equals("Emergency"))
                 {
-                    model.addRow(new Object[]{targetedNode.data.getId(), targetedNode.data.getName(), targetedNode.data.getService(),
-                            targetedNode.data.getAge(), targetedNode.data.getGender(), targetedNode.data.getCovid(), targetedNode.data.getPhone(),
-                            targetedNode.data.getCnic(), targetedNode.data.getAddress(), targetedNode.data.getAdmitted(), targetedNode.data.getTime()});
+                    model.addRow(new Object[]{targetedNode.patientData.getId(), targetedNode.patientData.getName(), targetedNode.patientData.getService(),
+                            targetedNode.patientData.getAge(), targetedNode.patientData.getGender(), targetedNode.patientData.getCovid(), targetedNode.patientData.getPhone(),
+                            targetedNode.patientData.getCnic(), targetedNode.patientData.getAddress(), targetedNode.patientData.getAdmitted(), targetedNode.patientData.getTime()});
 
                 }
                 targetedNode=targetedNode.moveToRight();
@@ -303,9 +303,9 @@ public class PatientsInWard_Screen extends javax.swing.JFrame{
      *<p>» Its Very much similar to contains() method.</p>
      *<p>» To insert a node our first task is to find the place to insert the node.</p>
      *<p>» Take current = root .</p>
-     *<p>» start from the current and compare root.data with n.</p>
-     *<p>» if current.data is greater than n that means we need to go to the left of the root.</p>
-     *<p>» if current.data is smaller than n that means we need to go to the right of the root.</p>
+     *<p>» start from the current and compare root.patientData with n.</p>
+     *<p>» if current.patientData is greater than n that means we need to go to the left of the root.</p>
+     *<p>» if current.patientData is smaller than n that means we need to go to the right of the root.</p>
      *<p>» if any point of time current is null that means we have reached to the leaf node, insert your
      *             node here with the help of parent node. (See code)</p>
      * @return true if Node is added as child else false.
@@ -323,7 +323,7 @@ public class PatientsInWard_Screen extends javax.swing.JFrame{
         while(true)
         {
             parentNode=targetingNode;
-            if(Integer.parseInt(data.getId())<Integer.parseInt(targetingNode.data.getId()))
+            if(Integer.parseInt(data.getId())<Integer.parseInt(targetingNode.patientData.getId()))
             {
                 targetingNode=targetingNode.moveToLeft();
                 if(targetingNode==null)

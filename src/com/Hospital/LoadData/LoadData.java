@@ -13,8 +13,10 @@ import java.util.Collections;
 
 
 public class LoadData {
-    public java.util.LinkedList<Patient> patientLinkedListUtil=new java.util.LinkedList<>();
+    public java.util.LinkedList<Patient> patientLinkedListUtil=new java.util.LinkedList<>(); // For Building Tree
+    public java.util.LinkedList<Doctors> doctorsLinkedListUtil=new java.util.LinkedList<>(); // For Building Tree
 
+    // Main backbone Data Structures //
     public LinkedList<Patient> patientLinkedList=new LinkedList<>();
     public LinkedList<Doctors> doctorsLinkedList=new LinkedList<>();
     public LinkedList<UserCredentials> userCredentialsLinkedList=new LinkedList<>();
@@ -63,10 +65,13 @@ public class LoadData {
             while ((line= bufferDoctor.readLine())!=null)
             {
                 String[] separationCsvByColumn=line.split(",");
-            doctorsLinkedList.add(new Doctors(separationCsvByColumn[0],separationCsvByColumn[1],separationCsvByColumn[2],
+                doctorsLinkedListUtil.add(new Doctors(separationCsvByColumn[0],separationCsvByColumn[1],separationCsvByColumn[2],
+                        separationCsvByColumn[3],separationCsvByColumn[4],separationCsvByColumn[5],separationCsvByColumn[6]));
+                doctorsLinkedList.add(new Doctors(separationCsvByColumn[0],separationCsvByColumn[1],separationCsvByColumn[2],
                 separationCsvByColumn[3],separationCsvByColumn[4],separationCsvByColumn[5],separationCsvByColumn[6]));
-        }
-        readDoctors.close();
+            }
+            readDoctors.close();
+            Collections.shuffle(doctorsLinkedListUtil);// Randomizing default Java.Util.LinkedList fro Binary Search Tree
     }
     //==================================================================================================================
     private void loadDoctorPatientAssociation() throws IOException {

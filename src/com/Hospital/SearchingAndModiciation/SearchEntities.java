@@ -13,7 +13,7 @@ public class SearchEntities {
 
     //==================================================================================================================
     /**
-     * @param patientName accepts a Patient name from user and then search that name in related data field
+     * @param patientName accepts a Patient name from user and then search that name in related patientData field
      * @return Patient type: Patient related all record
      */
     public Patient searchPatientByName(String patientName) {
@@ -28,7 +28,7 @@ public class SearchEntities {
     }
 
     /**
-     * @param patientNameOrPhoneOrId accepts a Patient ID# or Phone:# or Name from user and then search that entite in related data field
+     * @param patientNameOrPhoneOrId accepts a Patient ID# or Phone:# or Name from user and then search that entite in related patientData field
      * @return Patient type: Patient related all record
      */
     //==================================================================================================================
@@ -181,6 +181,11 @@ public class SearchEntities {
      * @return whole Patient (LinkedList Java.util)
      */
     public java.util.LinkedList<Patient> getPatientLinkedListUtil() { return  loadData.patientLinkedListUtil; }
+    //==================================================================================================================
+    /**
+     * @return whole Doctor (LinkedList Java.util)
+     */
+    public java.util.LinkedList<Doctors> getDoctorsLinkedListUtil() {return  loadData.doctorsLinkedListUtil; }
     //==================================================================================================================
     /**
      * @return whole Patient (Stack Custom)

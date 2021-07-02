@@ -366,6 +366,7 @@ public class Welcome_Screen extends javax.swing.JFrame{
         // TODO add your handling code here:
         // TODO logout
         this.setVisible(false);
+        MainPanel.setVisible(false);
         LoginScreen loginScreen =new LoginScreen();
         loginScreen.setVisible(true);
 

@@ -1,15 +1,22 @@
 package com.Hospital.UIClasses;
 
+import com.Hospital.Core_Classes.Doctors;
 import com.Hospital.Core_Classes.Patient;
 
 class TreeNode {
-    public Patient data;
+    public Patient patientData;
+    public Doctors doctorData;
     private TreeNode leftLink;
     private TreeNode rightLink;
-    //Constructor-------------------------------------------------------------------------------------------------------
-    protected TreeNode(Patient data) {
+    //Constructor  for Patient------------------------------------------------------------------------------------------
+    protected TreeNode(Patient patientData) {
         this.leftLink = this.rightLink = null;
-        this.data = data;
+        this.patientData = patientData;
+    }
+    //Constructor  for Doctor------------------------------------------------------------------------------------------
+    protected TreeNode(Doctors doctorData) {
+        this.leftLink = this.rightLink = null;
+        this.doctorData = doctorData;
     }
     //Getters-----------------------------------------------------------------------------------------------------------
     /**

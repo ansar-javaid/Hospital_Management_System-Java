@@ -257,9 +257,9 @@ public class SearchPatient_Screen extends javax.swing.JFrame {
      *<p>» Its Very much similar to contains() method.</p>
      *<p>» To insert a node our first task is to find the place to insert the node.</p>
      *<p>» Take current = root .</p>
-     *<p>» start from the current and compare root.data with n.</p>
-     *<p>» if current.data is greater than n that means we need to go to the left of the root.</p>
-     *<p>» if current.data is smaller than n that means we need to go to the right of the root.</p>
+     *<p>» start from the current and compare root.patientData with n.</p>
+     *<p>» if current.patientData is greater than n that means we need to go to the left of the root.</p>
+     *<p>» if current.patientData is smaller than n that means we need to go to the right of the root.</p>
      *<p>» if any point of time current is null that means we have reached to the leaf node, insert your
      *             node here with the help of parent node. (See code)</p>
      * @return true if Node is added as child else false.
@@ -277,7 +277,7 @@ public class SearchPatient_Screen extends javax.swing.JFrame {
         while(true)
         {
             parentNode=targetingNode;
-            if(Integer.parseInt(data.getId())<Integer.parseInt(targetingNode.data.getId()))
+            if(Integer.parseInt(data.getId())<Integer.parseInt(targetingNode.patientData.getId()))
             {
                 targetingNode=targetingNode.moveToLeft();
                 if(targetingNode==null)
@@ -302,23 +302,23 @@ public class SearchPatient_Screen extends javax.swing.JFrame {
      * @param data integer type:
      *             <h2>‣ Algorithm:</h2>
      * <p>» Its very simple operation to perform.</p>
-     * <p>» start from the root and compare root.data with data</p>
-     * <p>» if root.data is greater than data that means we need to go to the left of the root.</p>
-     * <p>» if root.data is smaller than data that means we need to go to the right of the root.</p>
-     * <p>» if any point of time root.data is equal to the data then we have found the node, return true.</p>
+     * <p>» start from the root and compare root.patientData with patientData</p>
+     * <p>» if root.patientData is greater than patientData that means we need to go to the left of the root.</p>
+     * <p>» if root.patientData is smaller than patientData that means we need to go to the right of the root.</p>
+     * <p>» if any point of time root.patientData is equal to the patientData then we have found the node, return true.</p>
      * <p>» if we reach to the leaves (end of the tree) return false, we didn’t find the element</p>
-     * @return true if it contains data else false
+     * @return true if it contains patientData else false
      */
     public Patient contains(int data)
     {
         TreeNode targetedNode=rootNode;
         while(targetedNode!=null)
         {
-            if(data==Integer.parseInt(targetedNode.data.getId()))
+            if(data==Integer.parseInt(targetedNode.patientData.getId()))
             {
-                return targetedNode.data;
+                return targetedNode.patientData;
             }
-            else if(data<Integer.parseInt(targetedNode.data.getId()))
+            else if(data<Integer.parseInt(targetedNode.patientData.getId()))
             {
                 targetedNode=targetedNode.moveToLeft();
             }

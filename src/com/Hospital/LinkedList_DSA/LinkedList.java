@@ -3,7 +3,7 @@ package com.Hospital.LinkedList_DSA;
 import java.util.List;
 
 /**
- * Here we can use any kind of data type ie. Students, String , float.
+ * Here we can use any kind of patientData type ie. Students, String , float.
  * you just have to provide Datatype in <> like SinglyList< Students> or SinglyList< String>
  * @param <DataType>
  */

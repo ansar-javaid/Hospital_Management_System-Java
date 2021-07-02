@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 
 /**
  * Queue: First In First Out -FIFO .
- * Here we can use any kind of data type ie. Students, String , Integer.
+ * Here we can use any kind of patientData type ie. Students, String , Integer.
  * you just have to provide Datatype in <> like Queue< Students> or Node< String>
  * @param <DataType>
  */

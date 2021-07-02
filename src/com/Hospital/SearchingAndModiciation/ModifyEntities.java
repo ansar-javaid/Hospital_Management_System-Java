@@ -67,7 +67,7 @@ public class ModifyEntities {
     //==================================================================================================================
 
     /**
-     * This will write Patient's all data into the patient's Dataset file everytime when a patient is
+     * This will write Patient's all patientData into the patient's Dataset file everytime when a patient is
      * add into (type)Patients List. This is a global patient List it will contain every patient
      * @throws IOException
      */
@@ -156,7 +156,7 @@ public class ModifyEntities {
     //==================================================================================================================
 
     /**
-     * This will write Doctor's all data into the Doctor's Dataset file everytime when a Doctor is
+     * This will write Doctor's all patientData into the Doctor's Dataset file everytime when a Doctor is
      * add/updated into (type)Doctors List. This is a global Doctors List it will contain every Doctors
      * @throws IOException
      */

@@ -4,7 +4,7 @@ import com.Hospital.LinkedList_DSA.LinkedList;
 
 /**
  * Stack First In Last Out -FILO .
- * Here we can use any kind of data type ie. Students, String , Integer.
+ * Here we can use any kind of patientData type ie. Students, String , Integer.
  * you just have to provide Datatype in <> like Stack< Students> or Node< String>
  * @param <DataType>
  */

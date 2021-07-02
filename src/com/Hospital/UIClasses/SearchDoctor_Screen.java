@@ -1,12 +1,14 @@
 package com.Hospital.UIClasses;
 
 import com.Hospital.Core_Classes.Doctors;
+import com.Hospital.Core_Classes.Patient;
 import com.Hospital.SearchingAndModiciation.ModifyEntities;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class SearchDoctor_Screen extends javax.swing.JFrame {
+    private TreeNode rootNode;
     private final ModifyEntities modificationFunctions=new ModifyEntities();
     private Doctors mapDoctors;
     DefaultTableModel model;
@@ -17,6 +19,7 @@ public class SearchDoctor_Screen extends javax.swing.JFrame {
         this.setIconImage(icon);
         this.setTitle("Lahore General Hospital I.M.S");
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        buildingTree();
 
     }
 
@@ -208,20 +211,34 @@ public class SearchDoctor_Screen extends javax.swing.JFrame {
     private void searchDoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO Search  Specific doctor
         String IdOrName=searchDoctorName.getText();
-        mapDoctors=modificationFunctions.searchEntities.searchDoctorByNameAndId(IdOrName);
-        if(mapDoctors!=null)
-        {
+        try{
+            int ID = Integer.parseInt(IdOrName.replaceAll(" ",""));
+            Doctors doctor=contains(ID);
+            if(doctor!=null)
+            {
+                showDoctorNameLable.setText(doctor.getName() + " ( L.G.S)");
+                model.setRowCount(0);
+                model.insertRow(0, new Object[]{doctor.getId(), doctor.getName(), doctor.getSpecialization(),
+                        doctor.getService(), doctor.getCnic(), doctor.getAddress(), doctor.getSalary()});
+            }else {
 
-            showDoctorNameLable.setText(mapDoctors.getName() + " (L.G.S)");
-            model.setRowCount(0);
-            model.insertRow(0, new Object[]{mapDoctors.getId(), mapDoctors.getName(), mapDoctors.getSpecialization(),
-                    mapDoctors.getService(), mapDoctors.getCnic(), mapDoctors.getAddress(), mapDoctors.getSalary()});
+                showDoctorNameLable.setText("Doctor Not Found !");
+                model.setRowCount(0);
+            }
+        }catch (Exception e) {
+            mapDoctors = modificationFunctions.searchEntities.searchDoctorByNameAndId(IdOrName);
+            if (mapDoctors != null) {
 
-        }
-        else {
+                showDoctorNameLable.setText(mapDoctors.getName() + " (L.G.S)");
+                model.setRowCount(0);
+                model.insertRow(0, new Object[]{mapDoctors.getId(), mapDoctors.getName(), mapDoctors.getSpecialization(),
+                        mapDoctors.getService(), mapDoctors.getCnic(), mapDoctors.getAddress(), mapDoctors.getSalary()});
 
-            showDoctorNameLable.setText("Doctor Not Found!");
-            model.setRowCount(0);
+            } else {
+
+                showDoctorNameLable.setText("Doctor Not Found!");
+                model.setRowCount(0);
+            }
         }
     }
     //==================================================================================================================
@@ -235,42 +252,95 @@ public class SearchDoctor_Screen extends javax.swing.JFrame {
         addPanel.validate();
     }
     //==================================================================================================================
-
+    //==================================================================================================================
     /**
-     * @param args the command line arguments
+     * @param data Patient type:
+     *            <h2>‣ Algorithm:</h2>
+     *<p>» Its Very much similar to contains() method.</p>
+     *<p>» To insert a node our first task is to find the place to insert the node.</p>
+     *<p>» Take current = root .</p>
+     *<p>» start from the current and compare root.patientData with n.</p>
+     *<p>» if current.patientData is greater than n that means we need to go to the left of the root.</p>
+     *<p>» if current.patientData is smaller than n that means we need to go to the right of the root.</p>
+     *<p>» if any point of time current is null that means we have reached to the leaf node, insert your
+     *             node here with the help of parent node. (See code)</p>
+     * @return true if Node is added as child else false.
      */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Windows".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(SearchDoctor_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(SearchDoctor_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(SearchDoctor_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(SearchDoctor_Screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new SearchDoctor_Screen().setVisible(true);
-//            }
-//        });
-//    }
+    private boolean insert(Doctors data)
+    {
+        TreeNode currentNode=new TreeNode(data);
+        if(rootNode==null)
+        {
+            rootNode=currentNode;
+            return true;
+        }
+        TreeNode targetingNode=rootNode;
+        TreeNode parentNode=null;
+        while(true)
+        {
+            parentNode=targetingNode;
+            if(Integer.parseInt(data.getId())<Integer.parseInt(targetingNode.doctorData.getId()))
+            {
+                targetingNode=targetingNode.moveToLeft();
+                if(targetingNode==null)
+                {
+                    parentNode.setLeftLink(currentNode);
+                    return true;
+                }
+            }
+            else
+            {
+                targetingNode=targetingNode.moveToRight();
+                if(targetingNode==null)
+                {
+                    parentNode.setRightLink(currentNode);
+                    return true;
+                }
+            }
+        }
+    }
+    //==================================================================================================================
+    /**
+     * @param data integer type:
+     *             <h2>‣ Algorithm:</h2>
+     * <p>» Its very simple operation to perform.</p>
+     * <p>» start from the root and compare root.patientData with patientData</p>
+     * <p>» if root.patientData is greater than patientData that means we need to go to the left of the root.</p>
+     * <p>» if root.patientData is smaller than patientData that means we need to go to the right of the root.</p>
+     * <p>» if any point of time root.patientData is equal to the patientData then we have found the node, return true.</p>
+     * <p>» if we reach to the leaves (end of the tree) return false, we didn’t find the element</p>
+     * @return true if it contains patientData else false
+     */
+    public Doctors contains(int data)
+    {
+        TreeNode targetedNode=rootNode;
+        while(targetedNode!=null)
+        {
+            if(data==Integer.parseInt(targetedNode.doctorData.getId()))
+            {
+                return targetedNode.doctorData;
+            }
+            else if(data<Integer.parseInt(targetedNode.doctorData.getId()))
+            {
+                targetedNode=targetedNode.moveToLeft();
+            }
+            else
+            {
+                targetedNode=targetedNode.moveToRight();
+            }
+        }
+        return null;
+    }
+    //==================================================================================================================
+    private void buildingTree()
+    {
+        java.util.LinkedList<Doctors> doctorsLinkedList =modificationFunctions.searchEntities.getDoctorsLinkedListUtil();
+        for(int count = 0; count< doctorsLinkedList.size(); count++)
+        {
+            insert(doctorsLinkedList.get(count));
+        }
+    }
+    //==================================================================================================================
 
     // Variables declaration - do not modify
     private javax.swing.JToggleButton backToWellcomeScreen;
